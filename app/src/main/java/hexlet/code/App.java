@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.CalculatorGame;
 import hexlet.code.games.EvenNumberGame;
+import hexlet.code.games.GreatestCommonDivisor;
 
 import java.util.Scanner;
 
@@ -9,6 +10,7 @@ public class App {
     static final int OPTION_GREETING = 1;
     static final int OPTION_EVEN_NUMBER_GAME = 2;
     static final int OPTION_CALCULATOR_GAME = 3;
+    static final int OPTION_GCD_GAME = 4;
 
     public static void main(String[] args) {
         System.out.print("""
@@ -16,6 +18,8 @@ public class App {
                 1 - Greet
                 2 - Even
                 3 - Calc
+                4 - GCD
+                0 - Exit
                 Your choice:\s""");
 
         Scanner input = new Scanner(System.in);
@@ -28,6 +32,7 @@ public class App {
             case OPTION_GREETING -> Cli.greeting();
             case OPTION_EVEN_NUMBER_GAME -> EvenNumberGame.runEven();
             case OPTION_CALCULATOR_GAME -> CalculatorGame.runCalk();
+            case OPTION_GCD_GAME -> GreatestCommonDivisor.runGCD();
             default -> {
             }
         }

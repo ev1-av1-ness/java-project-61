@@ -11,15 +11,15 @@ public class EvenNumberGame {
     }
 
     public static void runEven() {
-        int oneNumber;
-        int countOfAnswersBoxIndex = 2; //правильный и неправильный
+        int numberFromQuestion; //число для вопроса
+        int countOfAnswersBoxIndex = 2; //места для правильного и неправильного вариантов
         String[][] dataGame = new String[COUNT_OF_QUESTIONS_BOX][countOfAnswersBoxIndex];
 
         for (int i = 0; i < COUNT_OF_QUESTIONS_BOX; i++) {
-            oneNumber = RandomUtils.randomNumber();
-            dataGame[i][QUESTION_DATA_BOX] = Integer.toString(oneNumber);
+            numberFromQuestion = RandomUtils.randomNumber();
+            dataGame[i][QUESTION_DATA_BOX] = Integer.toString(numberFromQuestion);
 
-            if (isEven(oneNumber)) {
+            if (isEven(numberFromQuestion)) {
                 dataGame[i][CORRECT_ANSWER_DATA_BOX] = "yes";
             } else {
                 dataGame[i][CORRECT_ANSWER_DATA_BOX] = "no";

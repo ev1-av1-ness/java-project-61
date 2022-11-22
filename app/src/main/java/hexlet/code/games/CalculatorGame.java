@@ -5,8 +5,9 @@ import hexlet.code.RandomUtils;
 
 import java.util.Random;
 
+import static hexlet.code.Engine.*;
+
 public class CalculatorGame {
-    private static final String CALCULATOR_QUESTION = "What is the result of the expression?";
     private static final String[] OPERATOR_SIGNS = new String[]{"*", "+", "-"};
 
     private static int calculateExpression(int numberA, int numberB, String operationSign) {
@@ -20,7 +21,7 @@ public class CalculatorGame {
             case "-" -> {
                 return numberA - numberB;
             }
-            default -> throw new UnsupportedOperationException("This arithmetic expression is not available!");
+            default -> throw new UnsupportedOperationException("This operation is not available!");
         }
     }
 
@@ -28,18 +29,18 @@ public class CalculatorGame {
         String operationSign; //знак операции
         int firstNumber; //первое случайное число
         int secondNumber; //второе случайное число
-        int countOfAnswersBoxIndex = 2; //место для правильного и неправильного вариантов
-        String[][] dataGame = new String[Engine.COUNT_OF_QUESTIONS_BOX][countOfAnswersBoxIndex];
+        int countOfAnswersBoxIndex = 2; //места для правильного и неправильного вариантов
+        String[][] dataGame = new String[COUNT_OF_QUESTIONS_BOX][countOfAnswersBoxIndex];
 
-        for (int i = 0; i < Engine.COUNT_OF_QUESTIONS_BOX; i++) {
+        for (int i = 0; i < COUNT_OF_QUESTIONS_BOX; i++) {
             firstNumber = RandomUtils.randomNumber();
             secondNumber = RandomUtils.randomNumber();
-            operationSign = OPERATOR_SIGNS[new Random().nextInt(OPERATOR_SIGNS.length)]; //любой из знаков-операторов
+            operationSign = OPERATOR_SIGNS[new Random().nextInt(OPERATOR_SIGNS.length)]; //любой из знаков операций
 
-            dataGame[i][Engine.QUESTION_DATA_BOX] = firstNumber + " " + operationSign + " " + secondNumber;
-            dataGame[i][Engine.CORRECT_ANSWER_DATA_BOX] =
-                    Integer.toString(calculateExpression(firstNumber, secondNumber, operationSign));
+            dataGame[i][QUESTION_DATA_BOX] = firstNumber + " " + operationSign + " " + secondNumber;
+            dataGame[i][CORRECT_ANSWER_DATA_BOX] =
+                    String.valueOf(calculateExpression(firstNumber, secondNumber, operationSign));
         }
-        Engine.run(dataGame, CALCULATOR_QUESTION);
+        run(dataGame, "What is the result of the expression?");
     }
 }
