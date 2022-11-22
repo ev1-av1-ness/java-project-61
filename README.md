@@ -6,4 +6,6 @@
 # GAMES asciinemas:
 
 ## Even Game
-https://asciinema.org/connect/d1c32419-172b-4bc9-a12f-a3c1f019dce0
+https://asciinema.org/a/yzmwv1TbtFyofi1sdRbP8BU5m
+## Calculator Game
+https://asciinema.org/a/fcZmy6zQr41ErCGmfSAbindZN
