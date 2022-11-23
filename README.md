@@ -13,3 +13,5 @@ https://asciinema.org/a/fcZmy6zQr41ErCGmfSAbindZN
 https://asciinema.org/a/E9Z6nOAumIy7ACkPPSvX3tNs4
 ## The Arithmetic Progression Game
 https://asciinema.org/a/POZHgUZmvQsnM1qjO3mt8duFA
+## Prime Game
+https://asciinema.org/a/mPwVuurkZOpU7WQbczu68u6Ab

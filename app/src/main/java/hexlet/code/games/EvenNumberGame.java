@@ -11,9 +11,9 @@ public class EvenNumberGame {
     }
 
     public static void runEven() {
+        String[][] dataGame = new String[COUNT_OF_QUESTIONS_BOX][COUNT_OF_ANSWER_BOX_INDEX];
+
         int numberFromQuestion; //число для вопроса
-        int countOfAnswersBoxIndex = 2; //места для правильного и неправильного вариантов
-        String[][] dataGame = new String[COUNT_OF_QUESTIONS_BOX][countOfAnswersBoxIndex];
 
         for (int i = 0; i < COUNT_OF_QUESTIONS_BOX; i++) {
             numberFromQuestion = RandomUtils.randomNumber();

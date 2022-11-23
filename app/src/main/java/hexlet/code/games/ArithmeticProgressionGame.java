@@ -38,22 +38,18 @@ public class ArithmeticProgressionGame {
     }
 
     public static void runArithmeticProgression() {
-
-        String[][] dataGame = new String[Engine.COUNT_OF_QUESTIONS_BOX][2];
+        String[][] dataGame = new String[Engine.COUNT_OF_QUESTIONS_BOX][COUNT_OF_ANSWER_BOX_INDEX];
 
         int firstNumber; //первый элемент прогрессии
         int stepProgression; //шаг арифметической прогресси
 
         for (int i = 0; i < Engine.COUNT_OF_QUESTIONS_BOX; i++) {
-            //определяем ряд прогресси
+            //определяем ряд прогрессии
             firstNumber = RandomUtils.randomNumber(MAX_FIRST_NUMBER);
             stepProgression = RandomUtils.randomNumber(MAX_STEP_PROGRESSION);
-            if (stepProgression == 0) {
-                stepProgression = stepProgression + 1; //прибавляем 1, чтобы шаг не мог равняться нулю
-            }
+            if (stepProgression == 0) stepProgression = stepProgression + 1; //прибавляем 1, чтобы шаг не мог равняться нулю
 
-            int[] progressionNumbers = createProgressionNumber(firstNumber, stepProgression);
-            //определяем номер элемента в ряде, который будет спрашиваться у игрока
+            int[] progressionNumbers = createProgressionNumber(firstNumber, stepProgression); //определяем номер элемента в ряде, который будет спрашиваться у игрока
             int numberElement = RandomUtils.randomNumber(MAX_NUMBER_ELEMENT);
             dataGame[i][QUESTION_DATA_BOX] =
                     maskNumberAndFormatProgressionToString(progressionNumbers, numberElement);

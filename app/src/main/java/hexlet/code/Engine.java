@@ -6,6 +6,7 @@ public class Engine {
     public static final int COUNT_OF_QUESTIONS_BOX = 3;
     public static final int QUESTION_DATA_BOX = 0;
     public static final int CORRECT_ANSWER_DATA_BOX = 1;
+    public static final int COUNT_OF_ANSWER_BOX_INDEX = 2; //места для правильного и неправильного вариантов
 
     public static void run(String[][] gameData, String taskDescription) {
         String userName = Cli.greeting();

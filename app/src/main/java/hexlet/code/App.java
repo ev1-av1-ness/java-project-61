@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.ArithmeticProgressionGame;
-import hexlet.code.games.CalculatorGame;
-import hexlet.code.games.EvenNumberGame;
-import hexlet.code.games.GreatestCommonDivisor;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -13,6 +10,7 @@ public class App {
     static final int OPTION_CALCULATOR_GAME = 3;
     static final int OPTION_GCD_GAME = 4;
     static final int OPTION_PROGRESSION_GAME = 5;
+    static final int OPTION_PRIME_NUMBER_GAME = 6;
 
     public static void main(String[] args) {
         System.out.print("""
@@ -22,6 +20,7 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit
                 Your choice:\s""");
 
@@ -37,6 +36,7 @@ public class App {
             case OPTION_CALCULATOR_GAME -> CalculatorGame.runCalk();
             case OPTION_GCD_GAME -> GreatestCommonDivisor.runGCD();
             case OPTION_PROGRESSION_GAME -> ArithmeticProgressionGame.runArithmeticProgression();
+            case OPTION_PRIME_NUMBER_GAME -> PrimeNumberGame.runPrime();
             default -> {
             }
         }
