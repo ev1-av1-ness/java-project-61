@@ -1,8 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
-
-import static hexlet.code.Engine.*;
 
 public class EvenNumberGame {
 
@@ -11,20 +10,21 @@ public class EvenNumberGame {
     }
 
     public static void runEven() {
-        String[][] dataGame = new String[COUNT_OF_QUESTIONS_BOX][COUNT_OF_ANSWER_BOX_INDEX];
+        String[][] dataGame
+                = new String[Engine.COUNT_OF_QUESTIONS_BOX][Engine.COUNT_OF_ANSWER_BOX_INDEX];
 
         int numberFromQuestion; //число для вопроса
 
-        for (int i = 0; i < COUNT_OF_QUESTIONS_BOX; i++) {
+        for (int i = 0; i < Engine.COUNT_OF_QUESTIONS_BOX; i++) {
             numberFromQuestion = RandomUtils.randomNumber();
-            dataGame[i][QUESTION_DATA_BOX] = Integer.toString(numberFromQuestion);
+            dataGame[i][Engine.QUESTION_DATA_BOX] = Integer.toString(numberFromQuestion);
 
             if (isEven(numberFromQuestion)) {
-                dataGame[i][CORRECT_ANSWER_DATA_BOX] = "yes";
+                dataGame[i][Engine.CORRECT_ANSWER_DATA_BOX] = "yes";
             } else {
-                dataGame[i][CORRECT_ANSWER_DATA_BOX] = "no";
+                dataGame[i][Engine.CORRECT_ANSWER_DATA_BOX] = "no";
             }
         }
-        run(dataGame, "Answer 'yes' if the number is even, otherwise answer 'no'.");
+        Engine.run(dataGame, "Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 }

@@ -26,7 +26,8 @@ public class Engine {
                 numberOfCurrentAttempt++;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                        + gameData[numberOfCurrentAttempt][CORRECT_ANSWER_DATA_BOX] + "'. Let's try again, " + userName + "!");
+                        + gameData[numberOfCurrentAttempt][CORRECT_ANSWER_DATA_BOX]
+                        + "'. Let's try again, " + userName + "!");
                 return;
             }
         }

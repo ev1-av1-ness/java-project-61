@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
-import static hexlet.code.Engine.*;
-
 public class ArithmeticProgressionGame {
     private static final int MAX_LENGTH_PROGRESSION = 10; //максимальная длина прогрессии
     private static final int MAX_FIRST_NUMBER = 9; //генерируем первый элемент прогресии
@@ -38,7 +36,8 @@ public class ArithmeticProgressionGame {
     }
 
     public static void runArithmeticProgression() {
-        String[][] dataGame = new String[Engine.COUNT_OF_QUESTIONS_BOX][COUNT_OF_ANSWER_BOX_INDEX];
+        String[][] dataGame
+                = new String[Engine.COUNT_OF_QUESTIONS_BOX][Engine.COUNT_OF_ANSWER_BOX_INDEX];
 
         int firstNumber; //первый элемент прогрессии
         int stepProgression; //шаг арифметической прогресси
@@ -47,14 +46,20 @@ public class ArithmeticProgressionGame {
             //определяем ряд прогрессии
             firstNumber = RandomUtils.randomNumber(MAX_FIRST_NUMBER);
             stepProgression = RandomUtils.randomNumber(MAX_STEP_PROGRESSION);
-            if (stepProgression == 0) stepProgression = stepProgression + 1; //прибавляем 1, чтобы шаг не мог равняться нулю
+            if (stepProgression == 0) {
+                stepProgression = stepProgression + 1;
+                //прибавляем 1, чтобы шаг не мог равняться нулю
+            }
 
-            int[] progressionNumbers = createProgressionNumber(firstNumber, stepProgression); //определяем номер элемента в ряде, который будет спрашиваться у игрока
+            int[] progressionNumbers
+                    = createProgressionNumber(firstNumber, stepProgression);
+            //определяем номер элемента в ряде, который будет спрашиваться у игрока
             int numberElement = RandomUtils.randomNumber(MAX_NUMBER_ELEMENT);
-            dataGame[i][QUESTION_DATA_BOX] =
+            dataGame[i][Engine.QUESTION_DATA_BOX] =
                     maskNumberAndFormatProgressionToString(progressionNumbers, numberElement);
-            dataGame[i][CORRECT_ANSWER_DATA_BOX] = String.valueOf(progressionNumbers[numberElement]);
+            dataGame[i][Engine.CORRECT_ANSWER_DATA_BOX]
+                    = String.valueOf(progressionNumbers[numberElement]);
         }
-        run(dataGame, "What number is missing in the progression?");
+        Engine.run(dataGame, "What number is missing in the progression?");
     }
 }
