@@ -19,6 +19,6 @@ public class RandomUtils {
      * @return default max value of random number
      */
     public static int randomNumber() {
-        return randomNumber(10);
+        return randomNumber(DEFAULT_MAX_RANDOM_NUMBER);
     }
 }

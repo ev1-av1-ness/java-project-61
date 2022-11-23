@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.ArithmeticProgressionGame;
+import hexlet.code.games.CalculatorGame;
+import hexlet.code.games.EvenNumberGame;
+import hexlet.code.games.GreatestCommonDivisor;
+import hexlet.code.games.PrimeNumberGame;
 
 import java.util.Scanner;
 
