@@ -9,5 +9,7 @@
 https://asciinema.org/a/yzmwv1TbtFyofi1sdRbP8BU5m
 ## Calculator Game
 https://asciinema.org/a/fcZmy6zQr41ErCGmfSAbindZN
-## The Greatest Common Divisor
+## The Greatest Common Divisor Game
 https://asciinema.org/a/E9Z6nOAumIy7ACkPPSvX3tNs4
+## The Arithmetic Progression Game
+https://asciinema.org/a/POZHgUZmvQsnM1qjO3mt8duFA

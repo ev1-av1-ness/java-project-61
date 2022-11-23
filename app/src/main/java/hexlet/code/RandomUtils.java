@@ -7,7 +7,15 @@ public class RandomUtils {
      *
      * @return random int number
      */
+    public static int randomNumber(int maxNumber) {
+        return new Random().nextInt(maxNumber);
+    }
+
+    /**
+     *
+     * @return random int number with default meaning
+     */
     public static int randomNumber() {
-        return new Random().nextInt(10);
+        return randomNumber(10);
     }
 }
