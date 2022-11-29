@@ -25,7 +25,9 @@ public class ArithmeticProgressionGame {
         return progressionNumbers;
     }
 
-    private static String maskNumberAndFormatProgressionToString(int[] progressionNumbers, int numberElement, int lengthProgression) {
+    private static String maskNumberAndFormatProgressionToString(int[] progressionNumbers,
+                                                                 int numberElement,
+                                                                 int lengthProgression) {
         var result = new StringBuilder();
         for (int i = 0; i < lengthProgression; i++) {
             if (i == numberElement) {
