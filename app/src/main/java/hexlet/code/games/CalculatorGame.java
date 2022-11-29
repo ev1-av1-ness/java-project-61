@@ -5,6 +5,7 @@ import hexlet.code.RandomUtils;
 import java.util.Random;
 
 public class CalculatorGame {
+    private static final String CALCULATOR_QUESTION = "What is the result of the expression?";
     private static final String[] OPERATOR_SIGNS = new String[]{"*", "+", "-"};
 
     private static int calculateExpression(int numberA, int numberB, String operationSign) {
@@ -41,6 +42,6 @@ public class CalculatorGame {
             dataGame[i][Engine.CORRECT_ANSWER_DATA_BOX] =
                     String.valueOf(calculateExpression(firstNumber, secondNumber, operationSign));
         }
-        Engine.run(dataGame, "What is the result of the expression?");
+        Engine.run(dataGame, CALCULATOR_QUESTION);
     }
 }

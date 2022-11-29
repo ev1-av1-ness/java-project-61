@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
 public class PrimeNumberGame {
+    public static final String PRIME_QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final int MAX_RANDOM_PRIME = 100;
 
     private static boolean isPrimeNumber(int number) {
@@ -35,7 +36,6 @@ public class PrimeNumberGame {
             }
         }
 
-        Engine.run(dataGame,
-                "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Engine.run(dataGame, PRIME_QUESTION);
     }
 }

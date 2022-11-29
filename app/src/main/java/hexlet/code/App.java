@@ -17,6 +17,11 @@ public class App {
     static final int OPTION_PRIME_NUMBER_GAME = 6;
 
     public static void main(String[] args) {
+        runApp();
+    }
+
+    public static void runApp() {
+        Scanner input = new Scanner(System.in);
         System.out.print("""
                 Please enter the game number and press Enter.
                 1 - Greet
@@ -28,9 +33,9 @@ public class App {
                 0 - Exit
                 Your choice:\s""");
 
-        Scanner input = new Scanner(System.in);
         int choose = input.nextInt();
         if (choose == 0) {
+            input.close();
             return;
         }
 
@@ -42,6 +47,10 @@ public class App {
             case OPTION_PROGRESSION_GAME -> ArithmeticProgressionGame.runArithmeticProgression();
             case OPTION_PRIME_NUMBER_GAME -> PrimeNumberGame.runPrime();
             default -> {
+                System.out.print("""
+                        Incorrect choice. Choose option in 1-6 range
+                        """);
+                runApp();
             }
         }
     }

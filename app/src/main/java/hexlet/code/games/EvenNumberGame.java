@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
 public class EvenNumberGame {
+    public static final String EVEN_QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     private static boolean isEven(int number) {
         return (number % 2 == 0);
@@ -25,6 +26,6 @@ public class EvenNumberGame {
                 dataGame[i][Engine.CORRECT_ANSWER_DATA_BOX] = "no";
             }
         }
-        Engine.run(dataGame, "Answer 'yes' if the number is even, otherwise answer 'no'.");
+        Engine.run(dataGame, EVEN_QUESTION);
     }
 }

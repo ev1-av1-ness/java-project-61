@@ -28,9 +28,11 @@ public class Engine {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                         + gameData[numberOfCurrentAttempt][CORRECT_ANSWER_DATA_BOX]
                         + "'. Let's try again, " + userName + "!");
+                input.close();
                 return;
             }
         }
         System.out.println("Congratulations, " + userName + "!");
+        input.close();
     }
 }
