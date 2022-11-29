@@ -8,7 +8,7 @@ public class ArithmeticProgressionGame {
     private static final int MAX_LENGTH_PROGRESSION = 10; //максимальная длина прогрессии
     private static final int MIN_LENGTH_PROGRESSION = 5; //минимальная длина прогрессии
     private static final int MAX_FIRST_NUMBER = 9; //генерируем первый элемент прогресии
-    private static final int MAX_NUMBER_ELEMENT = 9; //макс номер позиции в ряде, который может спрашиваться у игрока
+    private static final int MAX_NUMBER_ELEMENT = 4; //макс номер позиции в ряде, который может спрашиваться у игрока
     private static final int MIN_STEP_PROGRESSION = 1; //минимальный шаг прогрессии
     private static final int MAX_STEP_PROGRESSION = 3; //максимальный шаг прогрессии
 
@@ -25,9 +25,9 @@ public class ArithmeticProgressionGame {
         return progressionNumbers;
     }
 
-    private static String maskNumberAndFormatProgressionToString(int[] progressionNumbers, int numberElement, int lenghtProgression) {
+    private static String maskNumberAndFormatProgressionToString(int[] progressionNumbers, int numberElement, int lengthProgression) {
         var result = new StringBuilder();
-        for (int i = 0; i < lenghtProgression; i++) {
+        for (int i = 0; i < lengthProgression; i++) {
             if (i == numberElement) {
                 result.append(".. ");
             } else {
