@@ -14,7 +14,7 @@ public class ArithmeticProgressionGame {
 
     private static int[] createProgressionNumber(int firstNumber, int stepProgression, int lengthProgression) {
 
-        int[] progressionNumbers = new int[MAX_LENGTH_PROGRESSION]; //матрица с 10-ю числами прогрессии
+        int[] progressionNumbers = new int[lengthProgression]; //матрица с 10-ю числами прогрессии
         for (int j = 0; j < lengthProgression; j++) {
             if (j == 0) {
                 progressionNumbers[j] = firstNumber;
@@ -25,9 +25,9 @@ public class ArithmeticProgressionGame {
         return progressionNumbers;
     }
 
-    private static String maskNumberAndFormatProgressionToString(int[] progressionNumbers, int numberElement) {
+    private static String maskNumberAndFormatProgressionToString(int[] progressionNumbers, int numberElement, int lenghtProgression) {
         var result = new StringBuilder();
-        for (int i = 0; i < MAX_LENGTH_PROGRESSION; i++) {
+        for (int i = 0; i < lenghtProgression; i++) {
             if (i == numberElement) {
                 result.append(".. ");
             } else {
@@ -57,7 +57,7 @@ public class ArithmeticProgressionGame {
             //определяем номер элемента в ряде, который будет спрашиваться у игрока
             int numberElement = RandomUtils.randomNumber(MAX_NUMBER_ELEMENT);
             dataGame[i][Engine.QUESTION_DATA_BOX] =
-                    maskNumberAndFormatProgressionToString(progressionNumbers, numberElement);
+                    maskNumberAndFormatProgressionToString(progressionNumbers, numberElement, lengthProgression);
             dataGame[i][Engine.CORRECT_ANSWER_DATA_BOX]
                     = String.valueOf(progressionNumbers[numberElement]);
         }
