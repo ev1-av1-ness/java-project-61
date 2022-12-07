@@ -9,13 +9,15 @@ public class PrimeNumberGame {
     private static final int MIN_RANDOM_PRIME = 2;
 
     private static boolean isPrimeNumber(int number) {
-        for (int i = 2; i < number; i++) {
-            //бежим по циклу начиная от 2 и до самого числа не включительно
+        if (number == 1) {
+            return false;
+        }
+        for (int i = 2; i <= number / 2; i++) {
             if (number % i == 0) {
-                return false;  //вернуть false, переданное число простым не является
+                return false;
             }
         }
-        return true;  //вернуть true, переданное число простое
+        return true;
     }
 
     public static void runPrime() {

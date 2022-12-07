@@ -17,10 +17,6 @@ public class App {
     static final int OPTION_PRIME_NUMBER_GAME = 6;
 
     public static void main(String[] args) {
-        runApp();
-    }
-
-    public static void runApp() {
         Scanner input = new Scanner(System.in);
         System.out.print("""
                 Please enter the game number and press Enter.
@@ -40,17 +36,37 @@ public class App {
         }
 
         switch (choose) {
-            case OPTION_GREETING -> Cli.greeting();
-            case OPTION_EVEN_NUMBER_GAME -> EvenNumberGame.runEven();
-            case OPTION_CALCULATOR_GAME -> CalculatorGame.runCalk();
-            case OPTION_GCD_GAME -> GreatestCommonDivisor.runGCD();
-            case OPTION_PROGRESSION_GAME -> ArithmeticProgressionGame.runArithmeticProgression();
-            case OPTION_PRIME_NUMBER_GAME -> PrimeNumberGame.runPrime();
+            case OPTION_GREETING -> {
+                Cli.greeting();
+                input.close();
+            }
+            case OPTION_EVEN_NUMBER_GAME -> {
+                EvenNumberGame.runEven();
+                input.close();
+            }
+            case OPTION_CALCULATOR_GAME -> {
+                CalculatorGame.runCalk();
+                input.close();
+            }
+            case OPTION_GCD_GAME -> {
+                GreatestCommonDivisor.runGCD();
+                input.close();
+            }
+            case OPTION_PROGRESSION_GAME -> {
+                ArithmeticProgressionGame.runArithmeticProgression();
+                input.close();
+            }
+            case OPTION_PRIME_NUMBER_GAME -> {
+                PrimeNumberGame.runPrime();
+                input.close();
+            }
+
             default -> {
                 System.out.print("""
                         Incorrect choice. Choose option in 1-6 range
                         """);
-                runApp();
+                main(args);
+                input.close();
             }
         }
     }

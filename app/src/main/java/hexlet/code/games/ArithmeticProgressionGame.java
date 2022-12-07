@@ -12,15 +12,11 @@ public class ArithmeticProgressionGame {
     private static final int MIN_STEP_PROGRESSION = 1; //минимальный шаг прогрессии
     private static final int MAX_STEP_PROGRESSION = 3; //максимальный шаг прогрессии
 
-    private static int[] createProgressionNumber(int firstNumber, int stepProgression, int lengthProgression) {
+    private static int[] createProgressionNumbers(int firstNumber, int stepProgression, int lengthProgression) {
 
         int[] progressionNumbers = new int[lengthProgression]; //матрица с 10-ю числами прогрессии
         for (int j = 0; j < lengthProgression; j++) {
-            if (j == 0) {
-                progressionNumbers[j] = firstNumber;
-            } else {
-                progressionNumbers[j] = progressionNumbers[j - 1] + stepProgression;
-            }
+            progressionNumbers[j] = (firstNumber + (j - 1) * stepProgression);
         }
         return progressionNumbers;
     }
@@ -55,7 +51,7 @@ public class ArithmeticProgressionGame {
             lengthProgression = RandomUtils.randomNumber(MIN_LENGTH_PROGRESSION, MAX_LENGTH_PROGRESSION);
 
             int[] progressionNumbers
-                    = createProgressionNumber(firstNumber, stepProgression, lengthProgression);
+                    = createProgressionNumbers(firstNumber, stepProgression, lengthProgression);
             //определяем номер элемента в ряде, который будет спрашиваться у игрока
             int numberElement = RandomUtils.randomNumber(MAX_NUMBER_ELEMENT);
             dataGame[i][Engine.QUESTION_DATA_BOX] =
