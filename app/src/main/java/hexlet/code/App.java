@@ -36,38 +36,19 @@ public class App {
         }
 
         switch (choose) {
-            case OPTION_GREETING -> {
-                Cli.greeting();
-                input.close();
-            }
-            case OPTION_EVEN_NUMBER_GAME -> {
-                EvenNumberGame.runEven();
-                input.close();
-            }
-            case OPTION_CALCULATOR_GAME -> {
-                CalculatorGame.runCalk();
-                input.close();
-            }
-            case OPTION_GCD_GAME -> {
-                GreatestCommonDivisor.runGCD();
-                input.close();
-            }
-            case OPTION_PROGRESSION_GAME -> {
-                ArithmeticProgressionGame.runArithmeticProgression();
-                input.close();
-            }
-            case OPTION_PRIME_NUMBER_GAME -> {
-                PrimeNumberGame.runPrime();
-                input.close();
-            }
-
+            case OPTION_GREETING -> Cli.greeting();
+            case OPTION_EVEN_NUMBER_GAME -> EvenNumberGame.runEven();
+            case OPTION_CALCULATOR_GAME -> CalculatorGame.runCalk();
+            case OPTION_GCD_GAME -> GreatestCommonDivisor.runGCD();
+            case OPTION_PROGRESSION_GAME -> ArithmeticProgressionGame.runArithmeticProgression();
+            case OPTION_PRIME_NUMBER_GAME -> PrimeNumberGame.runPrime();
             default -> {
                 System.out.print("""
                         Incorrect choice. Choose option in 1-6 range
                         """);
                 main(args);
-                input.close();
             }
         }
+        input.close();
     }
 }
