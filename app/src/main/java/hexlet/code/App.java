@@ -44,9 +44,8 @@ public class App {
             case OPTION_PRIME_NUMBER_GAME -> PrimeNumberGame.runPrime();
             default -> {
                 System.out.print("""
-                        Incorrect choice. Choose option in 1-6 range
+                        Incorrect choosing game number. Please restart the game. 
                         """);
-                main(args);
             }
         }
         input.close();

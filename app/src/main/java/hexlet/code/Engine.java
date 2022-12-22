@@ -9,12 +9,17 @@ public class Engine {
     public static final int COUNT_OF_ANSWER_BOX_INDEX = 2; //места для правильного и неправильного вариантов
 
     public static void run(String[][] gameData, String taskDescription) {
-        String userName = Cli.greeting();
+        String userName;
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner input = new Scanner(System.in);
+        userName = input.nextLine();
+        System.out.println("Hello, " + userName + "!");
 
         int numberOfCurrentAttempt = 0;
         String userAnswer;
 
-        Scanner input = new Scanner(System.in);
         System.out.println(taskDescription);
         while (numberOfCurrentAttempt < COUNT_OF_QUESTIONS_BOX) {
             System.out.print("Question: " + gameData[numberOfCurrentAttempt][QUESTION_DATA_BOX]);
